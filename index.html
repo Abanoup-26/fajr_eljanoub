@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fajr-AJanoub</title>
+
+    <!---Swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css">
+    <!--tailwaind-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--flowbite-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+
+</head>
+
+<body class="font-sans" style="height: 100vh;">
+
+
+    <div class="grid grid-cols-12 grid-rows-auto gap-1 ">
+        <!---menu -->
+        <div class="hidden relative lg:block lg:col-span-2 lg:row-span-12 lg:col-start-11 lg:row-start-1  bg-gray-500">
+
+            <div class=" my-5   col-span-3 flex flex-col items-center justify-center  ">
+                <!-----user img-->
+                <div class="grid grid-cols-1 grid-rows-2">
+                    <div class="flex items-center justify-center">
+                        <img src="imgs/user.png" alt="" class="w-28 h-28 object-cover rounded-full ">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <p class="font-bold text-lg">Mohamed Ali</p>
+                    </div>
+                </div>
+
+                <div class="container mx-auto text-center flex-1">
+                    <ul class="flex flex-col">
+                        <a href="#"
+                            class="mt-2 nav-link active flex items-center justify-evenly px-4 py-2 rounded-lg bg-blue-500 text-white">
+                            <span class="font-bold text-lg">الرئيسية</span>
+                            <img src="imgs/icons/head.png" class="w-6 h-6" alt="Icon">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">التقارير</span>
+                            <img src="imgs/icons/Vector.png" class="w-6 h-6" alt="">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">محفوظات</span>
+                            <img src="imgs/icons/saves.png" class="w-6 h-6" alt="">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">اعدادات</span>
+                            <img src="imgs/icons/setting.png" class="w-6 h-6" alt="">
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="container flex flex-col justify-center items-center absolute bottom-0  ">
+                    <button type="button"
+                        class=" flex flex-row justify-center py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-transparent rounded-lg ">
+                        <span class="m-2 text-xl">ر.س |</span>
+                        <img class="m-2" src="imgs/icons/KSA.png" alt="">
+                    </button>
+
+                    <button type="button"
+                        class="flex flex-row justify-center p-5 m-5 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                        <span class="m-2 text-lg">تسجيل الخروج</span>
+                        <img class="m-2 text-lg" src="imgs/icons/logout Vector.png" alt="">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!---End Menu -->
+
+        <!--- End Header-->
+        <div class="col-span-12   md:col-span-12 lg:col-span-10 xl:col-span-10 ">
+            <div
+                class=" my-5 mx-3  flex flex-col items-center  md:flex md:flex-row md:items-center md:align-middle md:justify-between ">
+                <!--logo-->
+                <img src="imgs/logo.png" alt="" class="size-auto">
+                <!--logo-->
+
+                <!---Header Buttons -->
+                <div class="flex flex-row items-center text-white font-bold">
+                    <a href="">
+                        <img src="imgs/icons/Search.png" alt="" class=" p-2 m-4 w-16 h-16 object-cover rounded-full">
+                    </a>
+                    <button class="w-32 h-10 rounded text-sm font-bold " style="background-color: #9AD4BB;">
+                        اضافة مشروع جديد
+                    </button>
+
+
+                </div>
+                <!---Header Buttons -->
+
+                <!--Start Sidebar-->
+                <div x-data="{ open: false }">
+                    <div class="flex flex-row items-center">
+                        <!-- Toggle button -->
+                        <button x-show="!open" @click="open = !open" class="px-2 py-2">
+                            <img src="imgs/icons/bell_11971703.png" alt=""
+                                class="m-3 w-16 h-16 object-cover rounded-full">
+                        </button>
+                    </div>
+                    <!-- Offcanvas container -->
+                    <div x-show="open" class="fixed inset-0 overflow-hidden z-50">
+                        <!-- Offcanvas overlay -->
+                        <div @click="open = false" class="absolute inset-0 bg-black opacity-50"></div>
+
+                        <!-- Offcanvas content -->
+                        <div class="fixed inset-y-0 left-0 max-w-full flex">
+                            <div class="w-96 bg-white p-4 transform -translate-x-full transition-transform duration-300"
+                                :class="{ 'translate-x-0': open, 'translate-x-full': !open }">
+                                <!-- Offcanvas header -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <h2 class="text-lg font-semibold">الاشعارات</h2>
+                                    <button @click="open = false" class="text-gray-500 hover:text-gray-700">
+                                        <span class="sr-only">Close</span>
+                                        <!-- Close icon -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Offcanvas content goes here -->
+                                <div class="grid">
+                                    <div
+                                        class="my-4 p-4 flex flex-row items-center justify-center  border rounded-md h-28 ">
+                                        <p class="m-auto text-center text-md font-semibold">تم اكتمال مشروع ناين سكوير
+                                            مع المراجعة من
+                                            قبل
+                                            المهندسين.</p>
+                                    </div>
+                                    <div
+                                        class="my-4 p-4 flex flex-row items-center justify-center  border rounded-md h-36 ">
+                                        <p class="m-auto text-center text-md font-semibold">تم اكتمال مشروع ناين سكوير
+                                            مع المراجعة من
+                                            قبل
+                                            المهندسين.</p>
+                                    </div>
+                                    <div
+                                        class="my-4 p-4 flex flex-row items-center justify-center  border rounded-md h-36 ">
+                                        <p class="m-auto text-center text-md font-semibold">تم اكتمال مشروع ناين سكوير
+                                            مع المراجعة من
+                                            قبل
+                                            المهندسين.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--End Sidebar-->
+
+                <!-- Toggle Menu -->
+                <div x-data="{ toggle: false }" class="lg:hidden">
+                    <!-- Menu Toggle Button -->
+                    <button @click="toggle = !toggle" class="text-white p-3"
+                        aria-expanded="{{ toggle ? 'true' : 'false' }}">
+                        <img src="imgs/icons/menu_4204600.png" class="m-auto w-14 h-14" alt="Menu Icon">
+                        Menu
+                    </button>
+
+                    <!-- Mobile menu -->
+                    <div x-show="toggle" @click.outside="toggle = false"
+                        class="fixed inset-0 z-50 bg-gray-300 bg-opacity-85 lg:hidden">
+                        <div class="fixed inset-y-0 right-0 max-w-full p-4 bg-slate-400 shadow-lg ">
+                            <div class="my-5 ">
+                                <div class="container mx-auto my-auto text-center ">
+                                    <ul class="flex flex-col items-center justify-center max-w-full">
+                                        <a href="#"
+                                            class="mt-2 nav-link active flex items-center justify-evenly px-4 py-2 rounded-lg bg-blue-500 text-white">
+                                            <span class="font-bold text-lg">الرئيسية</span>
+                                            <img src="imgs/icons/head.png" class="w-6 h-6" alt="Icon">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">التقارير</span>
+                                            <img src="imgs/icons/Vector.png" class="w-6 h-6" alt="">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">محفوظات</span>
+                                            <img src="imgs/icons/saves.png" class="w-6 h-6" alt="">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">اعدادات</span>
+                                            <img src="imgs/icons/setting.png" class="w-6 h-6" alt="">
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Mobile Menu -->
+                </div>
+                <!-- Toggle Menu -->
+            </div>
+            <!-- Breadcrumb -->
+            <div class="col-span-8 flex  flex-row  w-full" dir="rtl">
+                <nav class="flex  text-gray-700 border border-gray-200 rounded-lg bg-gray-50" aria-label="Breadcrumb">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                        <li class="inline-flex ">
+                            <a href="#"
+                                class="inline-flex items-center text-2xl font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                الصفحة الرئيسية
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <!---BreadCrumb-->
+        </div>
+        <!--- End Header-->
+
+        <!---- First Section Box area -->
+        <div class="col-span-12 md:col-span-12 md:col-start-1 md:row-start-2 lg:col-span-10">
+
+            <div class="flex flex-col items-center justify-center flex-wrap min-[641px]:flex-row min-[641px]:flex-wrap min-[641px]:items-center min-[641px]:justify-center min-[641px]:col-span-3 min-[641px]:gap-2 
+                    2xl:flex-row 2xl:flex-wrap 2xl:items-center 2xl:justify-evenly 2xl:col-span-4 2xl:gap-2  ">
+                <!-- Box 1 -->
+                <div class="flex flex-col items-center justify-center bg-white rounded-md shadow-md max-h-20 my-4  ">
+                    <div class="flex items-center justify-center">
+                        <span class=" p-2 mx-5 font-bold "> جميع المشاريع</span>
+                        <img class="mx-5 h-8" src="imgs/icons/Group1.png" alt="">
+                    </div>
+                    <div class=" font-bold ">
+                        01
+                    </div>
+
+                </div>
+
+                <!-- Box 2 -->
+                <div class=" flex flex-col items-center justify-center bg-white rounded-md shadow-md max-h-20 my-4 ">
+                    <div class="flex items-center justify-center">
+                        <span class="p-2 mx-5 font-bold">قيد التنفيذ</span>
+                        <img class="mx-5 h-8" src="imgs/icons/Group 2.png" alt="">
+                    </div>
+                    <div class=" font-bold">
+                        01
+                    </div>
+
+                </div>
+
+                <!-- Box 3 -->
+                <div class="flex flex-col items-center justify-center bg-white rounded-md shadow-md max-h-20 my-4">
+                    <div class="flex items-center justify-center">
+                        <span class="p-2 mx-5 font-bold ">مشاريع قادمه</span>
+                        <img class="mx-5 h-8" src="imgs/icons/Group 3.png" alt="">
+                    </div>
+                    <div class=" font-bold">
+                        01
+                    </div>
+
+                </div>
+                <!-- Box 4 -->
+                <div class="flex flex-col items-center justify-center bg-white rounded-md shadow-md max-h-20 my-4">
+                    <div class="flex items-center justify-center">
+                        <span class="p-2 mx-5 font-bold "> مشاريع مكتمله</span>
+                        <img class="mx-5 h-8" src="imgs/icons/Group4.png" alt="">
+                    </div>
+                    <div class=" font-bold ">
+                        01
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!----End First Section Box area -->
+
+        <!-- Projects Section -->
+        <!--- Swiper -->
+        <div class="col-span-12 lg:col-span-10 lg:mx-4">
+            <!-- Slider main container -->
+            <div class="swiper ">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper ">
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide  " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+                    <!-- Slide have 1 project -->
+                    <div class="swiper-slide " id="project1">
+                        <div class="flex flex-col justify-center items-center h-full">
+                            <!----Single Project-->
+                            <div class="flex flex-col justify-between bg-red-200 p-4 rounded-md shadow-md mt-2 w-80">
+                                <div class="flex flex-row  ">
+                                    <div class="pie flex-grow"
+                                        data-pie='{ "round": true, "percent": 50, "colorSlice": "#E91E63", "time": 20 ,"size" :75}'>
+                                    </div>
+                                    <div class="ml-2">
+                                        <p class="font-bold">مشروع الحائط الاستنادي</p>
+                                        <p class="text-end">انشاء</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center text-end">
+                                    <table class="w-full border-collapse  items-center flex-grow">
+                                        <tr class="p-2 font-bold ">
+                                            <td>2022</td>
+                                            <td>تاريخ الانتهاء</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>5000</td>
+                                            <td>قيمة العقد</td>
+                                        </tr>
+                                        <tr class="p-2 font-bold ">
+                                            <td>605656</td>
+                                            <td>تكلفة المرحلة</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="flex flex-row items-center mt-4">
+                                    <button
+                                        class="bg-red-600 w-full md:w-60 h-10  m-auto rounded-lg flex flex-row items-start justify-center text-white font-bold">
+                                        <span class="m-auto">حذف
+                                            المشروع</span><img class="m-auto" src="imgs/icons/delete.png"
+                                            alt=""></button>
+                                    <button class="bg-blue-600 w-full md:w-60  h-10 m-2 rounded-lg text-white font-bold"
+                                        onclick="openProjectDetail('project1')">عرض
+                                        بالتفصيل</button>
+                                </div>
+                            </div>
+                            <!----Single Project-->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class=" swiper-pagination absolute bottom-2  "></div>
+
+                <!-- If we need navigation buttons -->
+                <div class=" swiper-button-prev " style="color: black ;"></div>
+                <div class=" swiper-button-next " style="color: black;"></div>
+
+
+            </div>
+        </div>
+        <!--- End Swiper -->
+        <!---End Projects Section -->
+        <!---Stepper-->
+        <div class="col-span-12 m-6 border  lg:col-span-5 ">
+            <div class="container m-6 w-full text-right p-5" dir="rtl">
+                <h5 class="font-bold text-2xl m-6">تفاصيل المشروع</h5>
+                <ol class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                            <img src="imgs/icons/done.png" alt="" srcset="">
+                        </span>
+                        <h3 class="font-bold leading-tight text-2xl">المرحلة الاولي</h3>
+                        <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                            نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+                        <div class="container mt-4 flex flex-row justify-evenly">
+                            <a href="#" class="text-green-500">تفاصيل</a>
+                            <a href="#" class="text-green-500">مشاركة المرحله</a>
+                        </div>
+                    </li>
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                            <img src="imgs/icons/in prog.png" alt="" srcset="">
+                        </span>
+                        <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                        <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                            نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+
+                        <div class="container mt-4 flex flex-row justify-evenly items-center">
+                            <button type="button"
+                                class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">تعديل
+                                , اضافه</button>
+                            <button type="button"
+                                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">تعديل
+                                السعر </button>
+                        </div>
+                    </li>
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                            <img src="imgs/icons/in prog.png" alt="" srcset="">
+                        </span>
+                        <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                        <p class="text-xl">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                            نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+                    </li>
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                            <img src="imgs/icons/in prog.png" alt="" srcset="">
+                        </span>
+                        <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                        <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                            نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+        <!-- Start project details -->
+        <div class="col-span-12 m-6 lg:col-span-5 flex flex-col items-center">
+            <!---Project Progress -->
+            <div class="container w-full m-6">
+                <div
+                    class="block w-auto max-w-lg p-6 bg-gray-100 border border-gray-200 rounded-lg shadow hover:bg-gray-200">
+                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 text-end">
+                        القائمين على المشروع
+                    </h5>
+                    <div class="container">
+                        <div class="mb-2 text-2xl font-medium  dark:text-black text-end flex flex-row justify-between">
+                            <span>5</span>
+                            <p>المهندسين </p>
+                        </div>
+                        <div class="w-full h-4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
+                            <div class="h-4 bg-blue-700 rounded-full " style="width: 45%"></div>
+                        </div>
+                        <div class="mb-2 text-2xl font-medium dark:text-black text-end flex flex-row justify-between">
+                            <span>22</span>
+                            <p>عماله</p>
+                        </div>
+                        <div class="w-full h-4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
+                            <div class="h-4 bg-red-600 rounded-full " style="width: 45%"></div>
+                        </div>
+                        <div class="mb-2 text-2xl font-medium dark:text-black text-end flex flex-row justify-between">
+                            <span>18</span>
+                            <p>مقاولين من الباطن</p>
+                        </div>
+                        <div class="w-full h-4 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
+                            <div class="h-4 bg-blue-500 rounded-full " style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---What is new -->
+            <div class="container w-full m-6">
+                <div class="block p-6 w-auto max-w-lg  bg-white border border-gray-200 rounded-lg shadow">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-end">! ما الجديد </h5>
+                    <div class="p-4 mb-4 text-2xl  rounded-lg bg-yellow-300 text-end">
+                        <div class="container">
+                            <div class="flex flex-row justify-between " dir="rtl">
+                                <h5 class="font-bold">اجتماع</h5>
+                                <p class="text-sm">12/10/2022</p>
+                            </div>
+                            <p class="text-sm">مناقشة المشروع مع الفريق والتعرف
+                                علي اخر التطوارت.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 mb-4 text-2xl  rounded-lg bg-yellow-300 text-end">
+                        <div class="container">
+                            <div class="flex flex-row justify-between " dir="rtl">
+                                <h5 class="font-bold">تحصيل</h5>
+                                <p class="text-sm">12/10/2022</p>
+                            </div>
+                            <p class="text-sm">تم دفع اخر ايصال سداد.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 mb-4 text-2xl  rounded-lg bg-yellow-300 text-end">
+                        <div class="container">
+                            <div class="flex flex-row justify-between " dir="rtl">
+                                <h5 class="font-bold">موافقة</h5>
+                                <p class="text-sm">12/10/2022</p>
+                            </div>
+                            <p class="text-sm">تم الرد بالموافقة من قبل شركة اعمار دبي.</p>
+                        </div>
+                    </div>
+
+                    <button type="button"
+                        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">اضافة
+                        خطه</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--End Project Details -->
+
+    </div>
+
+
+
+    <!---circular Progress bar-->
+    <script src="src/progressBar/circularProgressBar.min.js"></script>
+    <script>
+        const circle = new CircularProgressBar("pie");
+        circle.initial();
+    </script>
+    <!--Swiper-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <!--Swiper Configration-->
+    <script src="src/js/swiper.js"></script>
+    <!-- Include Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>

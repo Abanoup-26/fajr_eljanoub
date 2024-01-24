@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fajr-AJanoub</title>
+    <!--tailwaind-->
+    <!---Swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css">
+    <!--tailwaind-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--flowbite-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+
+</head>
+
+<body class="font-sans bg-slate-200 " style="height: 100vh;">
+
+
+    <div class="grid grid-cols-12 grid-rows-auto gap-1 ">
+        <!---menu -->
+        <div class="hidden relative  lg:block lg:col-span-2 lg:row-span-12 lg:col-start-11 lg:row-start-1  bg-gray-500">
+            <div class=" my-5 col-span-3 flex flex-col items-center justify-center  ">
+                <!-----user img-->
+                <div class="grid grid-cols-1 grid-rows-2">
+                    <div class="flex items-center justify-center">
+                        <img src="imgs/user.png" alt="" class="w-28 h-28 object-cover rounded-full ">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <p class="font-bold text-lg">Mohamed Ali</p>
+                    </div>
+                </div>
+
+                <div class="container mx-auto text-center flex-1">
+                    <ul class="flex flex-col">
+                        <a href="#"
+                            class="mt-2 nav-link active flex items-center justify-evenly px-4 py-2 rounded-lg bg-blue-500 text-white">
+                            <span class="font-bold text-lg">الرئيسية</span>
+                            <img src="imgs/icons/head.png" class="w-6 h-6" alt="Icon">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">التقارير</span>
+                            <img src="imgs/icons/Vector.png" class="w-6 h-6" alt="">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">محفوظات</span>
+                            <img src="imgs/icons/saves.png" class="w-6 h-6" alt="">
+                        </a>
+
+                        <a href="#"
+                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg hover:bg-gray-200">
+                            <span class="font-bold text-lg">اعدادات</span>
+                            <img src="imgs/icons/setting.png" class="w-6 h-6" alt="">
+                        </a>
+                    </ul>
+                </div>
+
+                <div class=" flex flex-col justify-center items-center absolute bottom-0  ">
+                    <button type="button"
+                        class=" flex flex-row justify-center py-2.5 px-5 me-2 mb-2 text-sm font-medium focus:outline-none bg-transparent rounded-lg ">
+                        <span class="m-2 text-xl">ر.س |</span>
+                        <img class="m-2" src="imgs/icons/KSA.png" alt="">
+                    </button>
+
+                    <button type="button"
+                        class="flex flex-row justify-center p-5 m-5 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                        <span class="m-2 text-lg">تسجيل الخروج</span>
+                        <img class="m-2 text-lg" src="imgs/icons/logout Vector.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!---End Menu -->
+
+        <!--- End Header-->
+        <div class="col-span-12 max-h-fit md:col-span-12 lg:col-span-10 xl:col-span-10 ">
+            <div
+                class=" my-5 mx-3  flex flex-col items-center  md:flex md:flex-row md:items-center md:align-middle md:justify-between ">
+                <!--logo-->
+                <img src="imgs/logo.png" alt="" class="size-auto">
+                <!--logo-->
+                <!-- Toggle Menu -->
+                <div x-data="{ toggle: false }" class="lg:hidden">
+                    <!-- Menu Toggle Button -->
+                    <button @click="toggle = !toggle" class="text-black p-3"
+                        aria-expanded="{{ toggle ? 'true' : 'false' }}">
+                        <img src="imgs/icons/menu_4204600.png" class="m-auto w-8 h-8" alt="Menu Icon">
+                        Menu
+                    </button>
+
+                    <!-- Mobile menu -->
+                    <div x-show="toggle" @click.outside="toggle = false"
+                        class="fixed inset-0 z-50 bg-gray-300 bg-opacity-85 lg:hidden">
+                        <div class="fixed inset-y-0 right-0 max-w-full p-4 bg-slate-300 shadow-lg ">
+                            <div class="my-5 ">
+                                <div class="container mx-auto my-auto text-center ">
+                                    <ul class="flex flex-col items-center justify-center max-w-full">
+                                        <a href="index.html"
+                                            class="mt-2 nav-link active flex items-center justify-evenly px-4 py-2 rounded-lg bg-blue-500 text-white">
+                                            <span class="font-bold text-lg">الرئيسية</span>
+                                            <img src="imgs/icons/head.png" class="w-6 h-6" alt="Icon">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">التقارير</span>
+                                            <img src="imgs/icons/Vector.png" class="w-6 h-6" alt="">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">محفوظات</span>
+                                            <img src="imgs/icons/saves.png" class="w-6 h-6" alt="">
+                                        </a>
+
+                                        <a href="#"
+                                            class="mt-2 nav-link flex items-center justify-evenly px-4 py-2 rounded-lg transition duration-300 hover:bg-gray-200">
+                                            <span class="font-bold text-lg">اعدادات</span>
+                                            <img src="imgs/icons/setting.png" class="w-6 h-6" alt="">
+                                        </a>
+                                    </ul>
+                                </div>
+                                <button type="button"
+                                    class="flex flex-row justify-center p-5 m-5 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                                    <span class="m-2 text-lg">تسجيل الخروج</span>
+                                    <img class="m-2 text-lg" src="imgs/icons/logout Vector.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Mobile Menu -->
+                </div>
+                <!-- Toggle Menu -->
+
+                <!-- Breadcrumb -->
+                <div class=" p-3 flex  flex-row  w-full border-l-emerald-600" dir="rtl">
+                    <nav class="flex h-10 text-black border border-gray-200 rounded-lg bg-gray-50"
+                        aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                            <li class="inline-flex ">
+                                <a href="#"
+                                    class="inline-flex items-center text-sm font-medium text-black hover:text-blue-600 dark:text-gray-400 dark:hover:text-red-400">
+                                    مشروع
+                                </a>
+                            </li>
+                            <li>
+                                <div class="flex items-center ">
+                                    <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 9 4-4-4-4" />
+                                    </svg>
+                                    <a href="#"
+                                        class="ms-1 flex-shrink-0  text-sm font-medium text-black hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-red-400">مشروع
+                                        الحائط الاستنادي </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flex items-center ">
+                                    <a href="#" class="w-1/4 flex-1 p-5 font-bold text-sm text-red-500"> غير
+                                        مكتمل
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ol>
+
+                    </nav>
+                </div>
+                <!---BreadCrumb-->
+            </div>
+
+        </div>
+        <!--- End Header-->
+
+        <!-- Project Section -->
+        <div class="col-span-12 lg:col-span-10 lg:mx-4 bg-slate-200">
+            <div class="mb-4 border-b border-gray-200" dir="rtl">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab"
+                    data-tabs-toggle="#default-tab-content" role="tablist">
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg" id="details-tab"
+                            data-tabs-target="#details" type="button" role="tab" aria-controls="details"
+                            aria-selected="false">التفاصيل
+                        </button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg" id="main-tab" data-tabs-target="#main"
+                            type="button" role="tab" aria-controls="main" aria-selected="false">البيانات
+                            الاساسيه</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="steps-tab" data-tabs-target="#steps" type="button" role="tab" aria-controls="steps"
+                            aria-selected="false">المراحل</button>
+                    </li>
+                    <li class="me-2" role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="worker-tab" data-tabs-target="#worker" type="button" role="tab" aria-controls="worker"
+                            aria-selected="false">القائمين</button>
+                    </li>
+                    <li role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="reports-tab" data-tabs-target="#reports" type="button" role="tab"
+                            aria-controls="reports" aria-selected="false">التقارير</button>
+                    </li>
+                    <!-- <li role="presentation">
+                        <button
+                            class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                            id="missions-tab" data-tabs-target="#missions" type="button" role="tab"
+                            aria-controls="missions" aria-selected="false">المهمات الجماعيه</button>
+                    </li> -->
+                </ul>
+            </div>
+            <div id="default-tab-content" dir="rtl">
+                <!--Details -->
+                <div class="hidden p-4 rounded-lg bg-slate-200" id="details" role="tabpanel"
+                    aria-labelledby="details-tab">
+                    <!--تفاصيل المشروع-->
+                    <div class="flex flex-row ">
+                        <div class="flex flex-row-reverse">
+                            <h5 class="m-auto font-bold mx-2">تفاصيل المشروع</h5>
+                            <img src="imgs/icons/Group1.png" alt="" srcset="">
+                        </div>
+                    </div>
+                    <!--table grid-->
+                    <div
+                        class="grid grid-rows-3 grid-cols-1 gap-3  md:grid md:grid-rows-2 md:grid-cols-2 md:gap-3 min-[1400px]:grid min-[1400px]:grid-rows-1 min-[1400px]:grid-cols-3 min-[1400px]:gap-3 ">
+
+                        <div class="flex flex-col justify-evenly p-3 m-3 bg-white rounded-lg ">
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3 ">
+                                <span class="text-lg text-center ">الحائط الأستنادي</span> اسم المشروع
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">إنشاء</span> النوع
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">5 شارع الفيصلية</span> العنوان
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">جدة</span> المدينه
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">11859</span> كود النطاق
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-evenly p-3 m-3 bg-white rounded-lg">
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">م/س: مختار علي</span> اشراف كلي
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">محاسب: سلطان دمام</span> اشراف مالي
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">م/س: كادر عمر</span> اشراف قطاع
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">فني: باهر محمود</span> اشراف فني
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">م/س: هدي أسماعيل</span> اشراف استلام
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-evenly p-3 m-3 bg-white rounded-lg">
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">إعمار السعودية</span> تابع الى
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">أقساط</span> طريقة التسديد
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">10</span> عدد الاقساط
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">6</span> مرحلة الاقساط
+                            </div>
+                            <div
+                                class="text-sm font-bold text-black flex  flex-row-reverse justify-between border rounded-md p-3 ml-3">
+                                <span class="text-lg text-center ">مراحل</span> تسليم
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row ">
+                        <div class="flex flex-row-reverse">
+                            <h5 class="m-auto font-bold mx-2">صور المشروع</h5>
+                            <img src="imgs/icons/photosIcon.png" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="container w-full border rounded-md bg-white m-auto md:my-2">
+                        <div class="flex flex-col md:flex-row-reverse  justify-between items-center my-5">
+                            <div class="container size-52 flex items-center p-3 m-3">
+                                <img class="mx-2" src="imgs/logo.png" alt="">
+                            </div>
+                            <div class="container size-52 flex items-center p-3 m-3">
+                                <img class="mx-2" src="imgs/logo.png" alt="">
+                            </div>
+                            <div class="container size-52 flex items-center p-3 m-3">
+                                <img class="mx-2" src="imgs/logo.png" alt="">
+                            </div>
+                            <div class="container size-52 flex items-center p-3 m-3">
+                                <img class="mx-2" src="imgs/logo.png" alt="">
+                            </div>
+                            <div class="container w-fit flex items-center p-3 m-3">
+                                <input type="file" name="Image" class="m-auto">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container w-full  m-auto">
+                        <div class="block p-6 w-auto max-w-lg  bg-white border border-gray-200 rounded-lg shadow">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">اخر التطورات</h5>
+                            <div class="p-4 mb-4 text-2xl  rounded-lg bg-gray-400 text-end">
+                                <div class="container">
+                                    <div class="flex flex-row justify-between " dir="rtl">
+                                        <h5 class="font-bold">اجتماع</h5>
+                                        <p class="text-sm">12/10/2022</p>
+                                    </div>
+                                    <p class="text-sm">مناقشة المشروع مع الفريق والتعرف
+                                        علي اخر التطوارت.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row items-center justify-center">
+                                <button type="button "
+                                    class=" text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">اضافة
+                                    بيان +</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Main-->
+                <div class="hidden p-4 rounded-lg bg-slate-200 " id="main" role="tabpanel" aria-labelledby="main-tab">
+                    <div class="md:grid md:grid-cols-2  md:items-center  lg:grid-cols-8">
+                        <!--المشروع-->
+                        <div
+                            class=" flex flex-row p-4 rounded-lg bg-slate-200 md:col-span-1 lg:flex-col lg:items-center lg:col-span-2 md:flex-1 ">
+                            <div class="bg-white w-full h-32 border rounded-xl">
+                                <h5 class=" font-bold text-sm  p-2 md:text-lg">رقم المشروع</h5>
+                                <p class="text-center font-bold p-5 text-xl md:text-xl">#1526556</p>
+                            </div>
+                            <div class="bg-white w-full h-32 border rounded-xl">
+                                <h5 class=" font-bold text-sm  p-2 md:text-lg">نوع المشروع</h5>
+                                <p class="text-center font-bold p-2 text-lg md:text-xl">خاص</p>
+                            </div>
+                            <div class="bg-white w-full h-32 border rounded-xl">
+                                <h5 class=" font-bold text-sm  p-2 md:text-lg md:p-2 ">تابع الى </h5>
+                                <p class="text-center font-bold p-2 text-lg md:text-xl">إعمار السعودية</p>
+                            </div>
+                        </div>
+                        <!--جدول مواعيد المشروع-->
+                        <div
+                            class="bg-white rounded-lg md:mt-2 p-5 md:col-span-1 md:items-center lg:col-span-3 lg:max-w-full  ">
+                            <div class="flex flex-row justify-start">
+                                <img src="imgs/icons/calender.png" class="w-auto max-h-full lg:h-full">
+                                <h5 class="text-lg font-bold p-3 mx-2 lg:p-0 lg:ml-2 ">جدول مواعيد المشروع</h5>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex flex-row justify-between font-bold text-lg my-2">تاريخ البدء
+                                    <span class="text-sm my-2">03/15/2022</span>
+                                </div>
+                                <div class="flex flex-row justify-between font-bold text-lg my-2">تاريخ الانتهاء
+                                    <span class="text-sm my-2">03/15/2022</span>
+                                </div>
+                                <div class="flex flex-col justify-between font-bold text-lg my-2 "> الايام المتبقيه
+
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                        <div class="bg-indigo-600 h-2.5 rounded-full dark:bg-indigo-500"
+                                            style="width: 55%">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 font-bold text-indigo-700 dark:text-indigo-500 text-end text-sm">
+                                        عدد
+                                        الايام/المتبقي
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--وصول المشروع-->
+                        <div
+                            class="flex flex-col items-center justify-center bg-white rounded-lg m-2 p-5 md:col-span-2 md:items-center lg:col-span-3 lg:max-w-full ">
+                            <h5 class="text-black font-bold text-center text-lg ">وصول المشروع</h5>
+                            <!--circle-->
+                            <div class="flex items-center justify-center my-3">
+                                <div class="pie flex-grow "
+                                    data-pie='{ "round": true, "percent": 20, "colorSlice": "#E32B1E", "time": 20 ,"size" :80}'>
+                                </div>
+                            </div>
+
+                            <div class=" w-full bg-white ">
+                                <div datepicker data-date="03/15/2022"
+                                    class=" p-2 m-2 flex flex-row justify-center items-center">
+                                </div>
+                            </div>
+                        </div>
+                        <!--اجمالي قيمة المشروع-->
+                        <div
+                            class="flex flex-col m-auto  bg-white my-2 rounded-lg md:col-span-2 md:w-full  md:mt-4 lg:col-span-6  lg:col-start-2">
+                            <h5 class="font-bold text-lg text-black my-4 py-5 text-center">إجمالي قيمة المشروع</h5>
+                            <h3 class="font-bold text-xl text-black my-4 py-5 text-center">889,201.50 س.ر</h3>
+                            <div class="mb-1 text-base font-medium dark:text-black flex flex-row justify-between p-2">
+                                <span class="text-sm text-black font-bold mx-2">المراحل</span>
+                                <span class="text-sm text-black font-bold mx-2">3/5</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mt-2 dark:bg-gray-700">
+                                <div class="bg-green-300 h-1.5 rounded-full " style="width: 45%">
+                                </div>
+                            </div>
+                            <span
+                                class=" font-bold text-green-400 text-sm m-3 hover:text-red-500 text-end">استعلام</span>
+                            <div class="flex flex-row w-full h-64 text-sm font-bold ">
+                                <canvas id="lineChart" class=""></canvas>
+                            </div>
+                            <div class="container my-2 flex flex-row justify-center items-center bg-white ">
+                                <a href="#" class="flex flex-col justify-center items-center  bg-white  m-2">
+                                    <img src="imgs/icons/moreIcon.png" class="w-6" alt="">
+                                    <p class="text-sm  ">المـزيـد</p>
+                                </a>
+                                <a href="#" class="flex flex-col justify-center items-center  bg-white  m-2">
+                                    <img src="imgs/icons/saveIcon.png" class="w-auto" alt="">
+                                    <p class="text-sm  ">احتفاظ</p>
+                                </a>
+                                <a href="#" class="flex flex-col justify-center items-center  bg-white  m-2">
+                                    <img src="imgs/icons/shareIcon.png" class="w-auto" alt="">
+                                    <p class="text-sm  ">مشاركة</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Steps -->
+                <div class="hidden p-4 rounded-lg bg-gray-50 " id="steps" role="tabpanel" aria-labelledby="steps-tab">
+                    <!--المراحل -->
+                    <div class=" mb-4 border-b border-gray-200 dark:border-gray-700">
+                        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="sub-steps-tab"
+                            data-tabs-toggle="#sub-steps-tab-content" role="tablist">
+                            <li class="me-2" role="presentation">
+                                <button
+                                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                                    id="engineer-steps-tab" data-tabs-target="#engineer-steps" type="button" role="tab"
+                                    aria-controls="engineer-steps" aria-selected="false">مراحل هندسيه</button>
+                            </li>
+                            <li class="me-2" role="presentation">
+                                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="financel-tab"
+                                    data-tabs-target="#financel" type="button" role="tab" aria-controls="financel"
+                                    aria-selected="false">المراحل الماليه</button>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div id="sub-steps-tab-content">
+                        <!--المراحل الهندسيه-->
+                        <div class="hidden  rounded-lg bg-white " id="engineer-steps" role="tabpanel"
+                            aria-labelledby="engineer-steps-tab">
+                            <!--Stepper-->
+                            <div class=" flex flex-col justify-center items-center w-fit m-6 border  lg:col-span-5 ">
+                                <div class="container m-6 w-full text-right p-5" dir="rtl">
+                                    <h5 class="font-bold text-2xl m-6">تفاصيل المشروع</h5>
+                                    <ol
+                                        class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400">
+                                        <li class="mb-10 ms-6">
+                                            <span
+                                                class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                                                <img src="imgs/icons/done.png" alt="" srcset="">
+                                            </span>
+                                            <h3 class="font-bold leading-tight text-2xl">المرحلة الاولي</h3>
+                                            <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                                                نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+                                            <div class="container mt-4 flex flex-row justify-evenly">
+                                                <a href="#" class="text-green-500">تفاصيل</a>
+                                                <a href="#" class="text-green-500">مشاركة المرحله</a>
+                                            </div>
+                                        </li>
+                                        <li class="mb-10 ms-6">
+                                            <span
+                                                class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                                                <img src="imgs/icons/in prog.png" alt="" srcset="">
+                                            </span>
+                                            <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                                            <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                                                نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+
+                                            <div class="container mt-4 flex flex-row justify-evenly items-center">
+                                                <button type="button"
+                                                    class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">تعديل
+                                                    , اضافه</button>
+                                                <button type="button"
+                                                    class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">تعديل
+                                                    السعر </button>
+                                            </div>
+                                        </li>
+                                        <li class="mb-10 ms-6">
+                                            <span
+                                                class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                                                <img src="imgs/icons/in prog.png" alt="" srcset="">
+                                            </span>
+                                            <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                                            <p class="text-xl">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                                                نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+                                        </li>
+                                        <li class="mb-10 ms-6">
+                                            <span
+                                                class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                                                <img src="imgs/icons/in prog.png" alt="" srcset="">
+                                            </span>
+                                            <h3 class="font-medium leading-tight text-2xl">المرحلة التالية</h3>
+                                            <p class="text-sm">أهلاً بك في عالم الإبداع والتصميم السعودي، حيث
+                                                نحول الأفكار إلى حقيقة بلمسة مميزة.</p>
+
+                                        </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                            <!--Buttons-->
+                            <div class="flex flex-row justify-end">
+                                <button type="button"
+                                    class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">اضافة
+                                    المراحل</button>
+
+                                <button type="button"
+                                    class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">تعديل
+                                    المراحل</button>
+                            </div>
+                        </div>
+                        <!--المراحل الماليه-->
+                        <div class="hidden p-4 rounded-lg bg-gray-50 " id="financel" role="tabpanel"
+                            aria-labelledby="financel-tab">
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="container w-full flex flex-col items-center justify-center shadow-lg">
+                                    <div class="flex flex-row-reverse p-10 items-center justify-center">
+                                        <div class="flex flex-col  m-auto p-5 font-bold text-2xl text-center">8 <span
+                                                class="text-sm font-semibold">
+                                                متبقي</span></div>
+                                        <div class="m-auto p-5 text-green-300 text-2xl">|</div>
+                                        <div class="flex flex-col font-bold text-2xl text-center m-auto p-5">10 <span
+                                                class="text-sm font-semibold">مراحل</span></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <!--indicator of step -->
+                                <div class="container w-full h-auto shadow-lg my-3" data-modal-target="medium-modal"
+                                    data-modal-toggle="medium-modal">
+                                    <div class="flex flex-row justify-between">
+                                        <span class="flex items-center  font-bold text-lg me-3 ms-5">
+                                            <span class="flex w-2.5 h-2.5 bg-blue-600 rounded-full  flex-shrink-0">
+                                            </span>
+                                            مرحلة اولي
+                                        </span>
+
+                                        <span
+                                            class="inline-flex ms-2 items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                                            <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                            done
+                                        </span>
+                                    </div>
+                                    <div class="flex p-5">
+                                        <p>مطالبة بدفع مبلغ مالي من اجمالي قيمة المشروع في الموعد المحدد.</p>
+                                    </div>
+                                    <div class="flex">
+                                        <img src="imgs/icons/DateIcon.png" class="w-auto p-2 " alt="">
+                                        <p class="w-auto p-2">March 2024</p>
+                                    </div>
+                                </div>
+                                <!--indicator of step -->
+                                <div class="container w-full h-auto shadow-lg my-3">
+                                    <div class="flex flex-row justify-between">
+                                        <span class="flex items-center  font-bold text-lg me-3 ms-5">
+                                            <span class="flex w-2.5 h-2.5 bg-blue-600 rounded-full  flex-shrink-0">
+                                            </span>
+                                            مرحلة ثانيه
+                                        </span>
+
+                                        <span
+                                            class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                            <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                            In Progress
+                                        </span>
+                                    </div>
+                                    <div class="flex p-5">
+                                        <p class="line-through">مطالبة بدفع مبلغ مالي من اجمالي قيمة المشروع في الموعد
+                                            المحدد.</p>
+                                    </div>
+                                    <div class="flex">
+                                        <img src="imgs/icons/DateIcon.png" class="w-auto p-2 " alt="">
+                                        <p class="w-auto p-2">March 2024</p>
+                                    </div>
+
+                                </div>
+                                <!--indicator of step -->
+                                <div class="container w-full h-auto shadow-lg my-3">
+                                    <div class="flex flex-row justify-between">
+                                        <span class="flex items-center justify-between  font-bold text-lg me-3 ms-5 ">
+                                            <span class="flex w-2.5 h-2.5 bg-blue-600 rounded-full  flex-shrink-0">
+                                            </span>
+                                            مرحلة اولي
+                                        </span>
+
+                                        <span
+                                            class="inline-flex ms-2 items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                                            <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                            done
+                                        </span>
+                                    </div>
+                                    <div class="flex p-5">
+                                        <p>مطالبة بدفع مبلغ مالي من اجمالي قيمة المشروع في الموعد المحدد.</p>
+                                    </div>
+                                    <div class="flex">
+                                        <img src="imgs/icons/DateIcon.png" class="w-auto p-2 " alt="">
+                                        <p class="w-auto p-2">March 2024</p>
+                                    </div>
+                                </div>
+                                <!--indicator of step -->
+                                <div class="container w-full h-auto shadow-lg my-3">
+                                    <div class="flex flex-row justify-between">
+                                        <span class="flex items-center  font-bold text-lg me-3 ms-5">
+                                            <span class="flex w-2.5 h-2.5 bg-blue-600 rounded-full  flex-shrink-0">
+                                            </span>
+                                            مرحلة ثانيه
+                                        </span>
+
+                                        <span
+                                            class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                            <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                            In Progress
+                                        </span>
+                                    </div>
+                                    <div class="flex p-5">
+                                        <p class="line-through">مطالبة بدفع مبلغ مالي من اجمالي قيمة المشروع في الموعد
+                                            المحدد.</p>
+                                    </div>
+                                    <div class="flex">
+                                        <img src="imgs/icons/DateIcon.png" class="w-auto p-2 " alt="">
+                                        <p class="w-auto p-2">March 2024</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--Buttons-->
+                            <div class="flex flex-row justify-end">
+                                <button type="button" data-modal-target="add-dues" data-modal-toggle="add-dues"
+                                    class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">اضافة
+                                    مستحقات</button>
+
+                                <button type="button"
+                                    class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">تعديل
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--End المراحل -->
+                    <!-- add-dues modal  -->
+                    <div id="add-dues" tabindex="-1" aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative p-4 w-full max-w-md max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow  container w-full ">
+                                <!-- Modal header -->
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                    <h3 class="text-lg font-semibold text-yellow-800 text-center">
+                                        Add Dues
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                        data-modal-toggle="add-dues">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <form class="p-4 md:p-5 ">
+                                    <div class="grid gap-4 mb-4 grid-cols-2">
+                                        <div class="col-span-2 ">
+                                            <label for="price"
+                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">قيمة
+                                                الدفعه</label>
+                                            <input type="number" name="price" id="price"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                placeholder="مبلغ" required="">
+                                        </div>
+                                        <div class="col-span-2">
+                                            <label for="description"
+                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">التفاصيل</label>
+
+                                            <textarea type="text" name="description" id="description"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                placeholder="التفاصيل" required=""></textarea>
+                                        </div>
+
+                                        <div class="col-span-2 sm:col-span-1">
+                                            <label for="category"
+                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">مشاركة
+                                                فى النظام</label>
+                                            <select id="category"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                                <option selected="">مشاركة فى النظام</option>
+                                                <option value="TV">TV/Monitors</option>
+                                                <option value="PC">PC</option>
+                                                <option value="GA">Gaming/Console</option>
+                                                <option value="PH">Phones</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-span-2">
+                                            <label for="consideration"
+                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">ملاحظه</label>
+
+                                            <textarea type="text" name="consideration" id="consideration"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                placeholder="الملاحظات" required=""></textarea>
+                                        </div>
+                                        <div class="col-span-2 sm:col-span-1">
+                                            <label for="step"
+                                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">المرحلة
+                                                التابع لها </label>
+                                            <select id="step"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                                <option selected=""> اختر المرحله </option>
+                                                <option value="TV">TV/Monitors</option>
+                                                <option value="PC">PC</option>
+                                                <option value="GA">Gaming/Console</option>
+                                                <option value="PH">Phones</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <button type="submit"
+                                        class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Save Dues
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!--details Modal-->
+                    <div id="medium-modal" tabindex="-1"
+                        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-lg max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow">
+                                <!-- Modal header -->
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                                    <h3 class="text-xl font-medium text-amber-700">
+                                        Step Details
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                        data-modal-hide="medium-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="p-4 md:p-5 space-y-4 grid grid-cols-12">
+                                    <div class="col-span-12">
+                                        <div class="details my-3">
+
+                                            <div class="container w-full h-auto shadow-lg my-3">
+                                                <div class="flex flex-row justify-between">
+                                                    <span class="flex items-center  font-bold text-lg me-3 ms-5">
+                                                        <span
+                                                            class="flex w-2.5 h-2.5 bg-blue-600 rounded-full  flex-shrink-0">
+                                                        </span>
+                                                        مرحلة اولي
+                                                    </span>
+
+                                                    <span
+                                                        class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                                                        <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                                                        غير مكتمل
+                                                    </span>
+                                                </div>
+                                                <div class="flex p-5">
+                                                    <p>مطالبة بدفع مبلغ مالي من اجمالي قيمة المشروع في
+                                                        الموعد
+                                                        المحدد.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="time my-3">
+                                            <p class="font-bold text-lg">وقت محدد للمشروع</p>
+                                            <div
+                                                class="container w-full flex flex-col items-center justify-center shadow-lg">
+                                                <div class="flex flex-row-reverse p-10 items-center justify-center">
+                                                    <div
+                                                        class="flex flex-col  m-auto p-5 font-bold text-sm text-center">
+                                                        OCT
+                                                        29,2023 </div>
+                                                    <div class="m-auto p-5 text-green-300 text-sm">|</div>
+                                                    <div class="flex flex-col font-bold text-sm text-center m-auto p-5">
+                                                        AUG
+                                                        29,2023 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="available my-3">
+                                            <p class="font-bold text-lg">متبقي من اجمالي المشروع</p>
+                                            <span>4899999.000 س.ر</span>
+                                        </div>
+                                        <div class="quantiy my-3">
+                                            <p class="font-bold text-lg">
+                                                قيمة المرحلة
+                                            </p>
+                                            <div class="flex flex-col">
+                                                <span>+50 الف س.ر</span>
+                                                <span>+50 الف س.ر</span>
+                                                <span>+50 الف س.ر</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-12 wanted flex flex-row justify-between">
+                                        <div>
+                                            <p class="font-bold text-lg">متبقي </p>
+                                            <span>+50 الف س.ر</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-bold text-lg">توثيق/توقيع</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+                                <div
+                                    class="flex flex-row-reverse items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+
+                                    <button data-modal-hide="medium-modal" type="button"
+                                        class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                                        <div class="flex flex-row">
+                                            <span>مشاركه</span> <img src="imgs/icons/shareIcon.png" class="m-auto"
+                                                alt="">
+                                        </div>
+                                    </button>
+                                    <button data-modal-hide="medium-modal" type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        <div class="flex flex-row">
+                                            <span>طباعه</span> <img src="imgs/icons/print.png" class="m-auto" alt="">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--details Modal-->
+                </div>
+
+                <!--Worker-->
+                <div class="hidden p-4 rounded-lg bg-gray-50 " id="worker" role="tabpanel" aria-labelledby="worker-tab">
+                    <!--Search and Filter-->
+                    <div class="container w-full h-full shadow-md rounded-lg ">
+                        <div class="search  flex flex-row items-center">
+                            <img src="imgs/icons/Search.png" class="size-8" alt="">
+                            <input type="search" name="xname" id="xname" class="border-none " placeholder="بحث...">
+                        </div>
+
+                        <div class="filter flex flex-row justify-between">
+                            <div class="filters my-5">
+                                <button type="button" style="background-color:#22555A ;"
+                                    class="px-3 py-2 text-xs font-medium text-center text-white  rounded-lg focus:ring-4 ">
+                                    داخل النظام</button>
+                                <button type="button" style="background-color: #EFEFEF;"
+                                    class="px-3 py-2 text-xs font-medium text-center text-black  rounded-lg  focus:ring-4 ">نطاق
+                                    اخر </button>
+                            </div>
+                            <p class="text-sm my-5 mx-5">يمكنك تحديد القائمين بأختيار أولوية الظهور</p>
+                        </div>
+                    </div>
+                    <!-- Table -->
+                    <div class="flex flex-col">
+                        <!--Header-->
+
+                        <div class="flex flex-row justify-between mx-5">
+                            <div class="p-4 ">
+                                <p class="text-center">الاسم</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">وظيفة</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">وضع</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">تصنيف</p>
+                            </div>
+                        </div>
+                        <!--End Header-->
+
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/user.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">منصور رسلان</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مهندس</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مشرف</p>
+                            </div>
+                            <div class="p-4  ">
+                                <button type="button" style="background-color:#22555A ;"
+                                    class="px-3 py-2 text-xs font-medium text-center text-white rounded-lg focus:ring-4 ">
+                                    داخل النظام
+                                </button>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/user.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">منصور رسلان</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مهندس</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مشرف</p>
+                            </div>
+                            <div class="p-4  ">
+                                <button type="button" style="background-color:#22555A ;"
+                                    class="px-3 py-2 text-xs font-medium text-center text-white rounded-lg focus:ring-4 ">
+                                    داخل النظام
+                                </button>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/user.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">منصور رسلان</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مهندس</p>
+                            </div>
+                            <div class="p-4 ">
+                                <p class="text-center">مشرف</p>
+                            </div>
+                            <div class="p-4  ">
+                                <button type="button" style="background-color: #EFEFEF;"
+                                    class="px-3 py-2 text-xs font-medium text-center text-black  rounded-lg  focus:ring-4 ">نطاق
+                                    اخر </button>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                    </div>
+                    <!--End Table -->
+
+                    <!--Buttons-->
+                    <div class="flex flex-row justify-end my-10">
+                        <button type="button" data-modal-target="add-workers" data-modal-toggle="add-workers"
+                            class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">اضافة
+                            قائمين</button>
+
+                        <button type="button"
+                            class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">تعديل
+                        </button>
+                    </div>
+
+                    <!--add workers Modal-->
+                    <div id="add-workers" tabindex="-1"
+                        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative w-full max-w-lg max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow">
+                                <!-- Modal header -->
+                                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                                    <h3 class="text-xl font-medium text-amber-700">
+                                        اضافة قائم
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                        data-modal-hide="add-workers">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="p-4 md:p-5 space-y-4 grid grid-cols-12">
+                                    <div class="col-span-6">
+                                        <h3 class="font-bold p-2 m-2  text-sm">بيانات اساسيه</h3>
+                                        <input class="mt-2" type="text" placeholder="اسم الموظف">
+                                        <input class="mt-2" type="number" placeholder="رقم الهاويه ">
+                                        <input class="mt-2" type="number" placeholder=" الرقم الوظيفي">
+                                        <input class="mt-2" type="text" placeholder="القسم ">
+                                        <input class="mt-2" type="text" placeholder="المهنه">
+                                        <input class="mt-2" type="number" placeholder="رقم التليفون">
+                                    </div>
+                                    <div class="col-span-6 ">
+                                        <h3 class="font-bold p-2 m-2  text-sm">حدد النطاق</h3>
+                                        <div class="flex flex-row justify-between">
+                                            <div class="form-group">
+                                                <input type="checkbox" name="personalCompany" id="">
+                                                <label for="personalCompany">خاص بالشركه</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="checkbox" name="outCompany" id="">
+                                                <label for="outCompany">خارج بالشركه</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+                                <div
+                                    class="flex flex-row items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+
+                                    <button data-modal-hide="medium-modal" type="button"
+                                        class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+
+                                        حفظ
+                                </div>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- add workers  Modal-->
+
+                    <!--OffCanvas to show worker-->
+                    <div id="worker-details"
+                        class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-full lg:w-1/2"
+                        tabindex="-1" aria-labelledby="worker-details-label">
+                        <h5 id="drawer-label"
+                            class="inline-flex items-center justify-between mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400 ">
+                            <img src="imgs/icons/detailsIcon.png" alt="" class="size-3">
+                            <p class="m-3 text-black"> عرض البيانات
+                            </p>
+                        </h5>
+                        <button type="button" data-drawer-hide="worker-details" aria-controls="worker-details"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close menu</span>
+                        </button>
+                        <!--offcanvas Details-->
+                        <div class="flex flex-col">
+                            <div class="flex flex-row justify-evenly">
+                                <div class="img flex flex-col  ">
+                                    <img src="imgs/icons/user.png" class="size-10 rounded-full mx-auto" alt="">
+                                    <p class=" text-nowrap  ms-3">منصور رسلان</p>
+                                </div>
+                                <!--phone number-->
+                                <div class="flex flex-row-reverse m-auto">
+                                    <img src="imgs/icons/Calling.png" alt="" class="size-4 m-auto">
+                                    <p class="mx-2 text-black m-auto">(966) 052 1358</p>
+                                </div>
+
+                            </div>
+                            <div class="flex flex-row">
+                                <!--Type-->
+                                <div class="container p-3 m-3 border flex flex-col  items-center justify-center ">
+                                    <h3 class="text-center mb-2 font-bold">النوع</h3>
+                                    <button type="button" style="background-color:#22555A ;"
+                                        class="px-3 py-2 text-xs font-medium text-center text-white  rounded-lg focus:ring-4 ">
+                                        داخل النظام</button>
+                                </div>
+                                <!--Projct-->
+                                <div class="container p-3 m-3 border flex flex-col items-center justify-center">
+                                    <h3 class="text-center mb-2 font-bold">مشروع الحالي</h3>
+                                    <p class="text-nowrap">مشروع الحائط الأستنادي</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row">
+                                <!--Ta3een-->
+                                <div class="container p-3 m-3 border flex flex-col items-center justify-center">
+                                    <h3 class="text-center mb-2 font-bold">تعيين</h3>
+                                    <p>2023</p>
+                                </div>
+                                <!--عائد-->
+                                <div class="container p-3 m-3 border flex flex-col items-center justify-center">
+                                    <h3 class="text-center mb-2 font-bold"> عائد</h3>
+                                    <p> 5,000 س.ر</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-center">
+                                <span
+                                    class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">جديد</span>
+                                <span
+                                    class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">متطور</span>
+                                <span
+                                    class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">منشغل</span>
+                                <span
+                                    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">مفتوح</span>
+                                <span
+                                    class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">مغلق</span>
+
+                            </div>
+
+                            <div class="flex flex-row my-5">
+                                <img src="imgs/icons/missions.png" class="size-4">
+                                <h2 class="font-bold mx-3">المهام القادمه</h2>
+                            </div>
+                            <div class="flex flex-col md:flex-row justify-between">
+
+                                <div class="date flex justify-between">
+                                    <img src="imgs/icons/DateIcon.png" class="mx-2  size-5" alt="">
+                                    <p>5:43 مساءا</p>
+                                    <p class="mx-3">12 الاثنين , مارس , 2023</p>
+                                </div>
+                                <p class="flex-1 text-base font-bold my-3">تنفيذ الوجهة العامة مع ارفاق التقارير في اسرع
+                                    وقت
+                                </p>
+                            </div>
+                            <div class="flex  mt-4">
+                                <p class=" md:w-4/5 text-wrap">علي كل من المهندس منصور رسلان و بالاشراف الفني جيمعا علي
+                                    عمل
+                                    في اسرف وقت في الوجهة
+                                    العامة من المشروع
+                                    الجديد مع ادق التفاصيل وجمع كل ما يخص الحصر بالتكلفة الكلية ارفقها هنا للتنفيذ في
+                                    الوقت المطلوب الانتهاء منه.</p>
+                            </div>
+                            <div class="flex flex-row justify-evenly">
+                                <div class="flex flex-col p-5 m-5">
+                                    <h2 class="font-bold">تذكير </h2>
+                                    <button type="button"
+                                        class=" mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">تفعيل</button>
+                                </div>
+                                <div class="flex flex-col p-5 m-5">
+                                    <h2 class="font-bold ">اهميه </h2>
+                                    <p class="mt-2">عاليه</p>
+                                </div>
+                                <div class="flex flex-col p-5 m-5">
+                                    <h2 class="font-bold ">تلاقي من </h2>
+                                    <p class="mt-2">مديري النظام</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row my-5">
+                                <img src="imgs/icons/mlhozat.png" class="size-4">
+                                <h2 class="font-bold mx-3">الملاحظات </h2>
+                            </div>
+                            <div class="container border ">
+                                <div class="flex flex-col md:flex-row justify-between">
+
+                                    <div class="date flex justify-between flex-shrink-0">
+                                        <img src="imgs/icons/DateIcon.png" class="mx-2  size-5" alt="">
+                                        <p>5:43 مساءا</p>
+                                        <p class="mx-3">12 الاثنين , مارس , 2023</p>
+                                    </div>
+                                    <p class="flex-1 text-nowrap m-3 p-3">ملاحظه من : <span class="font-bold"> ابانوب
+                                            يوسف</span>
+                                    </p>
+                                </div>
+                                <div class="molahza m-3">
+                                    السلام عليكم,
+                                    من فضلك اطلب الموافقة علي اخر تعديل في المشروع المرفق و تعين اكثر من فني في ذالك
+                                    المهام للعمل
+                                    علي وجهة جديدة ارسال لهم طلب المتابعة وفحص المواد الخام كاملا بعناية.
+                                </div>
+                                <div class="flex flex-row justify-end">
+                                    <button type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ملفات
+                                        مرفقه</button>
+                                </div>
+                            </div>
+                            <div class="container border ">
+                                <div class="flex flex-col md:flex-row justify-between">
+
+                                    <div class="date flex justify-between flex-shrink-0">
+                                        <img src="imgs/icons/DateIcon.png" class="mx-2  size-5" alt="">
+                                        <p>5:43 مساءا</p>
+                                        <p class="mx-3">12 الاثنين , مارس , 2023</p>
+                                    </div>
+                                    <p class="flex-1 text-nowrap  m-3 p-3">ملاحظه من : <span class="font-bold"> ابانوب
+                                            يوسف</span>
+                                    </p>
+                                </div>
+                                <div class="molahza">
+                                    السلام عليكم,
+                                    من فضلك اطلب الموافقة علي اخر تعديل في المشروع المرفق و تعين اكثر من فني في ذالك
+                                    المهام للعمل
+                                    علي وجهة جديدة ارسال لهم طلب المتابعة وفحص المواد الخام كاملا بعناية.
+                                </div>
+                                <div class="flex flex-row justify-end">
+                                    <button type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ملفات
+                                        مرفقه</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--offcanvas Details-->
+                    </div>
+                    <!--OffCanvas to show worker-->
+                </div>
+
+
+                <!--Reports-->
+                <div class="hidden p-4 rounded-lg bg-gray-50 " id="reports" role="tabpanel"
+                    aria-labelledby="reports-tab">
+                    <!-- Table -->
+                    <div class="flex flex-col p-0">
+                        <!--Header-->
+
+                        <div class="flex flex-row justify-between mx-5">
+                            <div class="p-4 ">
+                                <p class="text-center text-base font-bold"> الملف</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-center text-base font-bold">نوعه</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-center text-base font-bold">موعد الرفع</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center text-base font-bold">بواسطة</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-center text-base font-bold">ملاحظه</p>
+                            </div>
+                        </div>
+                        <!--End Header-->
+
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/pdf.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">عقد استطلاع المشروع </p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">PDF</p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">7 Oct 2023</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">اشراف مالي</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-ceante"> اول ملف مع انتظار رد العميل
+                                    و الموافقة عليها</p>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/pdf.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">عقد استطلاع المشروع </p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">PDF</p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">7 Oct 2023</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">اشراف مالي</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-ceante"> اول ملف مع انتظار رد العميل
+                                    و الموافقة عليها</p>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/pdf.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">عقد استطلاع المشروع </p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">PDF</p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">7 Oct 2023</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">اشراف مالي</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-ceante"> اول ملف مع انتظار رد العميل
+                                    و الموافقة عليها</p>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/pdf.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">عقد استطلاع المشروع </p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">PDF</p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">7 Oct 2023</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">اشراف مالي</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-ceante"> اول ملف مع انتظار رد العميل
+                                    و الموافقة عليها</p>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                        <!--Row-->
+                        <div class="flex flex-row justify-between shadow-xl p-4 rounded-md"
+                            data-drawer-target="worker-details" data-drawer-show="worker-details"
+                            aria-controls="worker-details">
+                            <div class="img flex flex-col md:flex-row md:items-center md:mx-3 ">
+                                <img src="imgs/icons/pdf.png" class="size-10 rounded-full mx-auto" alt="">
+                                <p class=" text-nowrap  ms-3">عقد استطلاع المشروع </p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">PDF</p>
+                            </div>
+                            <div class="p-4 hidden md:block">
+                                <p class="text-center">7 Oct 2023</p>
+                            </div>
+                            <div class="p-4  ">
+                                <p class="text-center">اشراف مالي</p>
+                            </div>
+                            <div class="p-4 hidden md:block ">
+                                <p class="text-ceante"> اول ملف مع انتظار رد العميل
+                                    و الموافقة عليها</p>
+                            </div>
+                        </div>
+                        <!--End Row-->
+                    </div>
+                    <!--End Table -->
+
+                    <div class="container w-full h-fit bg-blue-400">
+                        <div class="flex flex-col items-center justify-center ">
+                            <img src="imgs/icons/uploadIcon.png" alt="">
+                            <p class="font-bold text-base">
+                                قم بأضافة الملف المطلوب رفعه هنا
+                            </p>
+                            <p>الملفات المدعومة - PDF, PNG, JPG</p>
+
+                        </div>
+                        <div class="flex justify-center">
+
+                            <input type="file" name="contract" id="contract">
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!---End Project Section -->
+
+
+
+    </div>
+
+
+
+
+    <!-- flowbite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <!-- Include Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <!--Chart Js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!--Line Chart-->
+    <script src="src/js/line-chart.js"></script>
+    <!-- Include Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <!---circular Progress bar-->
+    <script src="src/progressBar/circularProgressBar.min.js"></script>
+    <script>
+        const circle = new CircularProgressBar("pie");
+        circle.initial();
+    </script>
+    <!--flowbite datepicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/datepicker.min.js"></script>
+</body>
+
+</html>
